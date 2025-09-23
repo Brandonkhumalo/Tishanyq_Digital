@@ -1,0 +1,14 @@
+---
+version: 2
+app:
+  name: my-react-site
+  type: static
+  webroot: dist/public
+  sources:
+    - .
+  hooks:
+    build:
+      - echo "Installing dependencies..."
+      - npm install
+      - echo "Building React frontend..."
+      - npm run build
