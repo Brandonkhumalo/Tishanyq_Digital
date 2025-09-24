@@ -1,19 +1,8 @@
 ---
-version: 2
-app:
-  name: react-tsx-site
-  type: static
-  webroot: dist/public
-  sources:
-    - .
-  hooks:
-    pre-deploy:
-      - echo "Cleaning old build..."
-      - rm -rf dist/public/*
-    build:
-      - echo "Installing dependencies..."
-      - npm install
-      - echo "Building Vite React app..."
-      - npm run build
-      - echo "Adding .htaccess for client-side routing..."
-      - cp client/.htaccess dist/public/.htaccess
+deployment:
+  tasks:
+    - export DEPLOYPATH=$HOME/public_html/   # <-- change if you deploy to a subfolder
+    - echo "Syncing dist -> $DEPLOYPATH"
+    - rm -rf $DEPLOYPATH/*                   # CAREFUL: backs up if you have data
+    - /bin/cp -a dist/* $DEPLOYPATH
+    - echo "Done."
