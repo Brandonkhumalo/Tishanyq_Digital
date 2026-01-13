@@ -21,8 +21,8 @@ const pricingData = [
     packages: [
       { name: "Entry Level", price: "550", maintenance: "55", features: ["upto 20 pages", "Mobile Friendly Interface", "Payments", "Emails", "SMS", "Database", "Security", "Search Engine Optimization", "Social Integration"] },
       { name: "Gold Package", price: "814", badge: "Best Choice", maintenance: "122", features: ["upto 50 pages", "Mobile Friendly Interface", "Payments", "Emails", "SMS", "Database", "Security", "Search Engine Optimization", "Social Integration"] },
-      { name: "Silver Package", price: "1220", features: ["upto 150 pages", "Mobile Friendly Interface", "Payments", "Emails", "SMS", "Database", "Security", "Search Engine Optimization", "Social Integration"] },
-      { name: "Platinum Package", price: "1800", features: ["Unlimited pages", "Mobile Friendly Interface", "Payments", "Emails", "SMS", "Database", "Security", "Search Engine Optimization", "Social Integration"] }
+      { name: "Silver Package", price: "1220", maintenance: "244", features: ["upto 150 pages", "Mobile Friendly Interface", "Payments", "Emails", "SMS", "Database", "Security", "Search Engine Optimization", "Social Integration"] },
+      { name: "Platinum Package", price: "1800", maintenance: "540", features: ["Unlimited pages", "Mobile Friendly Interface", "Payments", "Emails", "SMS", "Database", "Security", "Search Engine Optimization", "Social Integration"] }
     ],
     setupFees: [
       { name: "Emails", price: "50" },
@@ -34,8 +34,8 @@ const pricingData = [
     ]
   },
   {
-    category: "Custom Softwares",
-    description: "Bespoke software solutions tailored to your unique needs.",
+    category: "Custom Software Solutions",
+    description: "sales@tishanyq.co.zw | 0242707267-9 | 0781603382",
     packages: [
       { name: "Enterprise", price: "Contact Us", features: ["Custom Workflow Design", "Scalable Infrastructure", "Legacy Integration", "Dedicated Project Manager", "24/7 Priority Support", "Continuous Maintenance"] }
     ]
@@ -130,9 +130,12 @@ export default function Pricing() {
                     
                     <CardFooter className="pb-8 px-6">
                       <Button 
+                        asChild
                         className={`w-full h-12 text-base font-bold transition-all ${pkg.badge ? 'bg-primary hover:bg-primary/90' : 'bg-gray-800 hover:bg-gray-900'}`}
                       >
-                        Order Now
+                        <a href={`mailto:sales@tishanyq.co.zw?subject=Order Inquiry: ${pkg.name} - ${section.category}`}>
+                          Order Now
+                        </a>
                       </Button>
                     </CardFooter>
                   </Card>
