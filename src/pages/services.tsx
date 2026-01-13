@@ -1,4 +1,5 @@
 import ServiceCard from "@/components/sections/service-card";
+import Pricing from "@/components/sections/pricing";
 import { Bot, Cloud, TrendingUp, Puzzle, GraduationCap } from "lucide-react";
 
 const services = [
@@ -86,17 +87,26 @@ const Services = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Our Services</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Our Services & Pricing</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive digital transformation solutions tailored for African businesses
+              Comprehensive digital transformation solutions with transparent pricing tailored for African businesses
             </p>
           </div>
         </div>
       </section>
 
+      {/* Pricing Section (Now includes the detailed packages) */}
+      <Pricing />
+
       {/* Services Grid */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Capabilities</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Specialized expertise to drive your digital growth
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div key={service.title} className={index === 4 ? "md:col-span-2 lg:col-span-1" : ""}>
