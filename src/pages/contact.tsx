@@ -160,7 +160,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-medium text-gray-900">Email</h3>
-                      <p className="text-gray-600">Info@tishanyq.co.zw</p>
+                      <p className="text-gray-600">sales@tishanyq.co.zw</p>
                     </div>
                   </div>
                   
@@ -173,7 +173,7 @@ const Contact = () => {
                       <h3 className="font-medium text-gray-900">Phone</h3>
                       <p className="text-gray-600">Office: +263 242 707267-9</p>
                       <p className="text-gray-600">Mobile: +263 782 216826</p>
-                      <p className="text-gray-600">Mobile: +263 718 478929</p>
+                      <p className="text-gray-600">Mobile: +263 781 603382</p>
                     </div>
                   </div>
                   
