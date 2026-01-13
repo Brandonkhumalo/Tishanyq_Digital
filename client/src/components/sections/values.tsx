@@ -5,29 +5,29 @@ const values = [
     icon: Lightbulb,
     title: "Innovation",
     description: "Pioneering creative solutions that push the boundaries of what's possible in African tech.",
-    gradient: "from-[hsl(var(--primary-600))] to-[hsl(var(--secondary-600))]",
-    iconBg: "bg-[hsl(var(--primary-600))]"
+    gradient: "from-blue-50 to-cyan-50",
+    iconBg: "bg-blue-600"
   },
   {
     icon: Settings,
     title: "Efficiency",
     description: "Streamlining processes to maximize productivity and minimize waste in every solution.",
-    gradient: "from-[hsl(var(--secondary-600))] to-[hsl(var(--primary-600))]",
-    iconBg: "bg-[hsl(var(--secondary-600))]"
+    gradient: "from-blue-100 to-indigo-100",
+    iconBg: "bg-blue-700"
   },
   {
     icon: Users,
     title: "Inclusivity",
     description: "Ensuring our solutions are accessible and beneficial to all members of our communities.",
-    gradient: "from-green-100 to-emerald-100",
-    iconBg: "bg-[hsl(var(--accent-green))]"
+    gradient: "from-emerald-50 to-green-50",
+    iconBg: "bg-emerald-600"
   },
   {
     icon: Rocket,
     title: "Empowerment",
     description: "Equipping individuals and businesses with tools to achieve their fullest potential.",
-    gradient: "from-orange-100 to-amber-100",
-    iconBg: "bg-[hsl(var(--accent-orange))]"
+    gradient: "from-blue-50 to-indigo-50",
+    iconBg: "bg-primary"
   }
 ];
 
