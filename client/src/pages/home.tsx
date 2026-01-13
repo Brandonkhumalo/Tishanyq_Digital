@@ -1,6 +1,7 @@
 import Hero from "@/components/sections/hero";
 import Values from "@/components/sections/values";
 import ServiceCard from "@/components/sections/service-card";
+import Pricing from "@/components/sections/pricing";
 import { Bot, Cloud, TrendingUp, Puzzle, GraduationCap } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
@@ -130,6 +131,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Pricing Section */}
+      <Pricing />
 
       {/* Projects Preview Section */}
       <section className="py-20 bg-white">
