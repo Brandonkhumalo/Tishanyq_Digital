@@ -53,6 +53,40 @@ const pricingData = [
         ] 
       }
     ]
+  },
+  {
+    category: "Specialized Digital Services",
+    description: "Digital consultancy and cutting-edge AI automation solutions.",
+    packages: [
+      { 
+        name: "Digital Consultancy", 
+        price: "Starting $50", 
+        detail: "per hour",
+        features: [
+          "Assess business needs",
+          "Develop Strategies",
+          "Implement Solutions",
+          "Cyber security & IT strategy",
+          "Small companies: $50/hr",
+          "Medium companies: $100/hr",
+          "Large companies: $220/hr",
+          "Enterprise: $530/hr"
+        ] 
+      },
+      { 
+        name: "AI Agents & Automation", 
+        price: "Starting $300", 
+        detail: "once off",
+        features: [
+          "Chatbots from $300",
+          "Virtual Assistants from $850",
+          "Autonomous Agents from $760",
+          "25% Monthly Maintenance Fee",
+          "Continuous AI Training",
+          "Expert Expertise & Troubleshooting"
+        ] 
+      }
+    ]
   }
 ];
 
@@ -113,13 +147,13 @@ export default function Pricing() {
                     <CardHeader className="text-center pb-8 pt-10">
                       <CardTitle className="text-xl font-bold text-gray-900 mb-4">{pkg.name}</CardTitle>
                       <div className="flex items-center justify-center">
-                        {pkg.price !== "Contact Us" && <span className="text-2xl font-bold text-gray-900 self-start mt-1">$</span>}
+                        {pkg.price !== "Contact Us" && pkg.price !== "Get Quote" && !pkg.price.startsWith("Starting") && <span className="text-2xl font-bold text-gray-900 self-start mt-1">$</span>}
                         <span className="text-5xl font-black text-gray-900 tracking-tight">
                           {pkg.price}
                         </span>
-                        {pkg.price !== "Contact Us" && (
+                        {pkg.price !== "Contact Us" && pkg.price !== "Get Quote" && (
                           <div className="flex flex-col items-start ml-2 text-left">
-                            <span className="text-sm font-semibold text-gray-500 uppercase tracking-wider">once off</span>
+                            <span className="text-sm font-semibold text-gray-500 uppercase tracking-wider">{pkg.detail || "once off"}</span>
                           </div>
                         )}
                       </div>
