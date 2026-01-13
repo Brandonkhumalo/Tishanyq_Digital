@@ -1,8 +1,0 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=$HOME/public_html/   # <-- change if you deploy to a subfolder
-    - echo "Syncing dist -> $DEPLOYPATH"
-    - rm -rf $DEPLOYPATH/*                   # CAREFUL: backs up if you have data
-    - /bin/cp -a dist/* $DEPLOYPATH
-    - echo "Done."
