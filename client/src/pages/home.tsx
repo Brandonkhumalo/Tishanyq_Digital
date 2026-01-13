@@ -1,50 +1,36 @@
 import Hero from "@/components/sections/hero";
 import Values from "@/components/sections/values";
-import ServiceCard from "@/components/sections/service-card";
-import Pricing from "@/components/sections/pricing";
-import { Bot, Cloud, TrendingUp, Puzzle, GraduationCap } from "lucide-react";
+import { Laptop, Globe, Settings } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
-const services = [
+const pricingPackages = [
   {
-    title: "Business Process Automation",
-    description: "Automate repetitive tasks and workflows to increase efficiency and reduce human error in your business operations.",
-    image: "https://images.unsplash.com/photo-1573497620494-a2f1330f0cbb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400",
-    icon: <Bot className="w-8 h-8" />,
-    details: [
-      "Workflow automation",
-      "Document processing", 
-      "Task scheduling",
-      "Integration with existing systems"
-    ],
-    gradient: "from-[hsl(var(--primary-600))] to-[hsl(var(--secondary-600))]"
+    category: "Web Development",
+    icon: <Globe className="w-6 h-6 text-primary" />,
+    packages: [
+      { name: "Package 1", price: "$90" },
+      { name: "Package 2", price: "$120" },
+      { name: "Package 3", price: "$200" },
+      { name: "Package 4", price: "$550" },
+    ]
   },
   {
-    title: "Cloud Migration",
-    description: "Seamlessly migrate your infrastructure to the cloud for improved scalability, security, and cost-effectiveness.",
-    image: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400",
-    icon: <Cloud className="w-8 h-8" />,
-    details: [
-      "AWS, Azure, GCP migration",
-      "Data security & compliance",
-      "Performance optimization",
-      "24/7 monitoring & support"
-    ],
-    gradient: "from-[hsl(var(--secondary-600))] to-[hsl(var(--primary-600))]"
+    category: "Web Application",
+    icon: <Laptop className="w-6 h-6 text-primary" />,
+    packages: [
+      { name: "Basic", price: "$550" },
+      { name: "Small Business", price: "$814" },
+      { name: "Medium Business", price: "$1220" },
+      { name: "Enterprise", price: "$1800" },
+    ]
   },
   {
-    title: "Digital Consultancy",
-    description: "Strategic guidance to help you navigate digital transformation and leverage technology for competitive advantage.",
-    image: "https://images.unsplash.com/photo-1573497491208-6b1acb260507?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400",
-    icon: <TrendingUp className="w-8 h-8" />,
-    details: [
-      "Digital strategy development",
-      "Technology assessment",
-      "Process optimization", 
-      "Change management"
-    ],
-    gradient: "from-[hsl(var(--accent-green))] to-emerald-600"
+    category: "Custom Software",
+    icon: <Settings className="w-6 h-6 text-primary" />,
+    description: "Bespoke software solutions designed for your specific business needs."
   }
 ];
 
@@ -102,96 +88,69 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Services Preview Section */}
-      <section className="py-20 bg-gray-100">
+      {/* Pricing Packages Section */}
+      <section className="py-20 bg-gray-100 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+          <motion.div 
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Pricing Packages</h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Comprehensive digital transformation solutions tailored for African businesses
+              Transparent pricing for our digital services
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {services.map((service, index) => (
-              <ServiceCard
-                key={service.title}
-                {...service}
-                testId={`service-card-${service.title.toLowerCase().replace(/\s+/g, '-')}`}
-              />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {pricingPackages.map((item, idx) => (
+              <motion.div
+                key={item.category}
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: idx * 0.2 }}
+              >
+                <Card className="h-full border-t-4 border-t-primary shadow-lg hover:shadow-xl transition-shadow bg-white">
+                  <CardHeader className="text-center pb-2">
+                    <div className="mx-auto bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                      {item.icon}
+                    </div>
+                    <CardTitle className="text-xl font-bold uppercase tracking-wider">{item.category}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    {item.packages ? (
+                      <div className="space-y-4">
+                        {item.packages.map((pkg) => (
+                          <div key={pkg.name} className="flex flex-col items-center border-b border-gray-100 last:border-0 pb-4 last:pb-0">
+                            <span className="text-sm text-gray-500 font-medium">{pkg.name}</span>
+                            <span className="text-2xl font-bold text-primary">{pkg.price}</span>
+                            <Link href="/services">
+                              <Button variant="outline" size="sm" className="mt-2 text-xs">CHOOSE PLAN</Button>
+                            </Link>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="text-center py-8">
+                        <p className="text-gray-600 mb-6">{item.description}</p>
+                        <Link href="/services">
+                          <Button className="primary-btn w-full">CHOOSE PLAN</Button>
+                        </Link>
+                      </div>
+                    )}
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
-          </div>
-
-          <div className="text-center">
-            <Link href="/services">
-              <Button className="primary-btn px-8 py-4 rounded-xl text-lg" data-testid="view-all-services">
-                View All Services
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <Pricing />
-
-      {/* Projects Preview Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Real transformations we've delivered for businesses across Africa
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            <div className="bg-gradient-to-br from-blue-600 to-cyan-600 rounded-2xl p-8 text-white">
-              <div className="mb-4">
-                <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-4">
-                  <span className="text-2xl">🏦</span>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Banking Digital Transformation</h3>
-                <p className="text-blue-100 text-sm">Complete core banking system migration with 60% reduction in processing time</p>
-              </div>
-              <div className="text-sm text-blue-100">In Progress • 12 months</div>
-            </div>
-
-            <div className="bg-gradient-to-br from-green-600 to-emerald-600 rounded-2xl p-8 text-white">
-              <div className="mb-4">
-                <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-4">
-                  <span className="text-2xl">🌾</span>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">AgriTech Supply Chain</h3>
-                <p className="text-green-100 text-sm">Integrated platform connecting farmers with real-time inventory tracking</p>
-              </div>
-              <div className="text-sm text-green-100">In Progress • 8 months</div>
-            </div>
-
-            <div className="bg-gradient-to-br from-purple-600 to-indigo-600 rounded-2xl p-8 text-white">
-              <div className="mb-4">
-                <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-4">
-                  <span className="text-2xl">🏥</span>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Healthcare Management</h3>
-                <p className="text-purple-100 text-sm">Patient management system with 40% reduction in administrative tasks</p>
-              </div>
-              <div className="text-sm text-purple-100">✓ Completed • 6 months</div>
-            </div>
-          </div>
-
-          <div className="text-center">
-            <Link href="/projects">
-              <Button className="secondary-btn px-8 py-4 rounded-xl text-lg" data-testid="view-all-projects">
-                View All Projects
-              </Button>
-            </Link>
           </div>
         </div>
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-20 bg-gray-100">
+      <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Ready to Transform Your Business?
