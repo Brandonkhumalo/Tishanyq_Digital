@@ -35,9 +35,23 @@ const pricingData = [
   },
   {
     category: "Custom Software Solutions",
-    description: "sales@tishanyq.co.zw | 0242707267-9 | 0781603382",
+    description: "Tailored enterprise-level software solutions for your business.",
     packages: [
-      { name: "Enterprise", price: "Contact Us", features: ["Custom Workflow Design", "Scalable Infrastructure", "Legacy Integration", "Dedicated Project Manager", "24/7 Priority Support", "Continuous Maintenance"] }
+      { 
+        name: "Contact Us", 
+        price: "Get Quote", 
+        features: [
+          "Custom Workflow Design", 
+          "Scalable Infrastructure", 
+          "Legacy Integration", 
+          "Dedicated Project Manager", 
+          "24/7 Priority Support", 
+          "Continuous Maintenance",
+          "Email: sales@tishanyq.co.zw",
+          "Phone: 0242707267-9",
+          "Mobile: 0781603382"
+        ] 
+      }
     ]
   }
 ];
