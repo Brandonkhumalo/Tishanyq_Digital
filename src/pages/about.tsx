@@ -86,6 +86,52 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* Our Process Section */}
+      <section className="py-20 bg-gray-50 border-t">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Process</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              A proven methodology that ensures successful digital transformation
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center space-y-4">
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto text-white text-2xl font-bold">
+                1
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900">Discovery</h3>
+              <p className="text-gray-600">We analyze your current processes and identify opportunities for improvement.</p>
+            </div>
+            
+            <div className="text-center space-y-4">
+              <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto text-white text-2xl font-bold">
+                2
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900">Strategy</h3>
+              <p className="text-gray-600">We develop a comprehensive digital transformation strategy tailored to your needs.</p>
+            </div>
+            
+            <div className="text-center space-y-4">
+              <div className="w-16 h-16 bg-accent-green rounded-full flex items-center justify-center mx-auto text-white text-2xl font-bold">
+                3
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900">Implementation</h3>
+              <p className="text-gray-600">We execute the solution with minimal disruption to your business operations.</p>
+            </div>
+            
+            <div className="text-center space-y-4">
+              <div className="w-16 h-16 bg-accent-orange rounded-full flex items-center justify-center mx-auto text-white text-2xl font-bold">
+                4
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900">Support</h3>
+              <p className="text-gray-600">We provide ongoing support and training to ensure long-term success.</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
