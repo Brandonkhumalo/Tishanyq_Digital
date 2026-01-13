@@ -17,9 +17,9 @@ const Hero = () => {
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 Transforming the Future with{" "}
-                <span className="text-[#00FF88] drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">Technology</span>
+                <span className="text-[hsl(var(--accent-green))] drop-shadow-sm">Technology</span>
               </h1>
-              <p className="text-xl md:text-2xl text-white font-medium max-w-2xl drop-shadow-md">
+              <p className="text-xl md:text-2xl text-white/90 font-medium max-w-2xl drop-shadow-sm">
                 Tishanyq Digital empowers African businesses and individuals through smart, efficient tech solutions.
               </p>
             </div>
@@ -27,7 +27,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
                 <Button 
-                  className="bg-[#00D16F] hover:bg-[#00B35F] text-white px-8 py-4 rounded-xl text-lg font-bold transform hover:scale-105 shadow-xl transition-all"
+                  className="accent-green-btn px-8 py-4 rounded-xl text-lg font-bold transform hover:scale-105 shadow-lg transition-all"
                   data-testid="cta-get-started"
                 >
                   Get Started
@@ -37,7 +37,7 @@ const Hero = () => {
               <Link href="/about">
                 <Button 
                   variant="outline"
-                  className="border-2 border-white text-white hover:bg-white/20 backdrop-blur-sm px-8 py-4 rounded-xl text-lg font-bold shadow-lg"
+                  className="border-2 border-white/80 text-white hover:bg-white/10 backdrop-blur-md px-8 py-4 rounded-xl text-lg font-bold shadow-md transition-all"
                   data-testid="cta-learn-more"
                 >
                   Learn More
@@ -46,18 +46,18 @@ const Hero = () => {
             </div>
             
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/30">
+            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/20">
               <div className="text-center">
-                <div className="text-3xl font-black text-[#FFB800] drop-shadow-sm" data-testid="stat-projects">500+</div>
-                <div className="text-sm font-bold text-white uppercase tracking-wider">Projects Completed</div>
+                <div className="text-3xl font-black text-[hsl(var(--accent-orange))]" data-testid="stat-projects">500+</div>
+                <div className="text-sm font-semibold text-white/80 uppercase tracking-wider">Projects Completed</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-black text-[#00FF88] drop-shadow-sm" data-testid="stat-clients">50+</div>
-                <div className="text-sm font-bold text-white uppercase tracking-wider">Happy Clients</div>
+                <div className="text-3xl font-black text-[hsl(var(--accent-green))]" data-testid="stat-clients">50+</div>
+                <div className="text-sm font-semibold text-white/80 uppercase tracking-wider">Happy Clients</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-black text-white drop-shadow-sm" data-testid="stat-experience">5+</div>
-                <div className="text-sm font-bold text-white uppercase tracking-wider">Years Experience</div>
+                <div className="text-3xl font-black text-white" data-testid="stat-experience">5+</div>
+                <div className="text-sm font-semibold text-white/80 uppercase tracking-wider">Years Experience</div>
               </div>
             </div>
           </div>
