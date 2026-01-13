@@ -5,11 +5,12 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 const pricingPackages = [
   {
     category: "Web Development",
-    icon: <Globe className="w-6 h-6 text-primary" />,
+    icon: <Globe className="w-6 h-6" />,
     packages: [
       { name: "Package 1", price: "$90" },
       { name: "Package 2", price: "$120" },
@@ -19,7 +20,7 @@ const pricingPackages = [
   },
   {
     category: "Web Application",
-    icon: <Laptop className="w-6 h-6 text-primary" />,
+    icon: <Laptop className="w-6 h-6" />,
     packages: [
       { name: "Basic", price: "$550" },
       { name: "Small Business", price: "$814" },
@@ -29,7 +30,7 @@ const pricingPackages = [
   },
   {
     category: "Custom Software",
-    icon: <Settings className="w-6 h-6 text-primary" />,
+    icon: <Settings className="w-6 h-6" />,
     description: "Bespoke software solutions designed for your specific business needs."
   }
 ];
@@ -53,16 +54,9 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
             <div className="space-y-6">
               <div className="space-y-4">
-                <h3 className="text-2xl font-semibold text-gray-900">Our Mission</h3>
+                <h3 className="text-2xl font-semibold text-gray-900">Our Digital Transformation Approach</h3>
                 <p className="text-lg text-gray-700">
-                  To bridge the digital divide by providing cutting-edge technology solutions that empower African businesses and individuals to thrive in the digital economy.
-                </p>
-              </div>
-              
-              <div className="space-y-4">
-                <h3 className="text-2xl font-semibold text-gray-900">Our Vision</h3>
-                <p className="text-lg text-gray-700">
-                  A digitally transformed Africa where technology serves as the catalyst for sustainable economic growth, innovation, and inclusive prosperity.
+                  At Tishanyq Digital, we empower businesses to thrive in the modern economy by driving end-to-end digital transformation. We provide tailored strategies and innovative solutions that streamline operations, automate processes, enhance customer experiences, and unlock data-driven decision-making. From custom software development and cloud integration to digital marketing, cybersecurity, and staff training, we bridge the gap between business goals and cutting-edge technology. Our mission is to help organizations become more efficient, adaptable, and competitive in today’s fast-changing digital landscape.
                 </p>
               </div>
               
@@ -113,9 +107,15 @@ const Home = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: idx * 0.2 }}
               >
-                <Card className="h-full border-t-4 border-t-primary shadow-lg hover:shadow-xl transition-shadow bg-white">
+                <Card className={cn(
+                  "h-full border-t-4 shadow-lg hover:shadow-xl transition-shadow bg-white",
+                  idx < 2 ? "border-t-blue-600" : "border-t-primary"
+                )}>
                   <CardHeader className="text-center pb-2">
-                    <div className="mx-auto bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                    <div className={cn(
+                      "mx-auto w-12 h-12 rounded-full flex items-center justify-center mb-4",
+                      idx < 2 ? "bg-blue-50 text-blue-600" : "bg-primary/10 text-primary"
+                    )}>
                       {item.icon}
                     </div>
                     <CardTitle className="text-xl font-bold uppercase tracking-wider">{item.category}</CardTitle>
@@ -126,9 +126,21 @@ const Home = () => {
                         {item.packages.map((pkg) => (
                           <div key={pkg.name} className="flex flex-col items-center border-b border-gray-100 last:border-0 pb-4 last:pb-0">
                             <span className="text-sm text-gray-500 font-medium">{pkg.name}</span>
-                            <span className="text-2xl font-bold text-primary">{pkg.price}</span>
+                            <span className={cn(
+                              "text-2xl font-bold",
+                              idx < 2 ? "text-blue-600" : "text-primary"
+                            )}>{pkg.price}</span>
                             <Link href="/services">
-                              <Button variant="outline" size="sm" className="mt-2 text-xs">CHOOSE PLAN</Button>
+                              <Button 
+                                variant="outline" 
+                                size="sm" 
+                                className={cn(
+                                  "mt-2 text-xs",
+                                  idx < 2 ? "border-blue-200 text-blue-600 hover:bg-blue-50" : ""
+                                )}
+                              >
+                                CHOOSE PLAN
+                              </Button>
                             </Link>
                           </div>
                         ))}
