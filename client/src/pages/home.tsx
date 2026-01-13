@@ -41,44 +41,53 @@ const Home = () => {
       {/* Hero Section */}
       <Hero />
 
-      {/* About Preview Section */}
+      {/* About Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About Tishanyq Digital</h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Based in Zimbabwe, we're passionate about digital empowerment across Africa
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About Tishanyq Digital</h2>
+            <p className="text-lg text-gray-700 max-w-5xl mx-auto leading-relaxed">
+              At Tishanyq Digital, we empower businesses to thrive in the modern economy by driving end-to-end digital transformation. We provide tailored strategies and innovative solutions that streamline operations, automate processes, enhance customer experiences, and unlock data-driven decision-making. From custom software development and cloud integration to digital marketing, cybersecurity, and staff training, we bridge the gap between business goals and cutting-edge technology. Our mission is to help organizations become more efficient, adaptable, and competitive in today’s fast-changing digital landscape.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-            <div className="space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8 order-2 lg:order-1">
               <div className="space-y-4">
-                <h3 className="text-2xl font-semibold text-gray-900">Our Digital Transformation Approach</h3>
+                <h3 className="text-2xl font-bold text-gray-900">Our Mission</h3>
                 <p className="text-lg text-gray-700">
-                  At Tishanyq Digital, we empower businesses to thrive in the modern economy by driving end-to-end digital transformation. We provide tailored strategies and innovative solutions that streamline operations, automate processes, enhance customer experiences, and unlock data-driven decision-making. From custom software development and cloud integration to digital marketing, cybersecurity, and staff training, we bridge the gap between business goals and cutting-edge technology. Our mission is to help organizations become more efficient, adaptable, and competitive in today’s fast-changing digital landscape.
+                  To bridge the digital divide by providing cutting-edge technology solutions that empower African businesses and individuals to thrive in the digital economy.
                 </p>
               </div>
               
-              <div className="pt-6">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-gray-900">Our Vision</h3>
+                <p className="text-lg text-gray-700">
+                  A digitally transformed Africa where technology serves as the catalyst for sustainable economic growth, innovation, and inclusive prosperity.
+                </p>
+              </div>
+              
+              <div className="pt-4">
                 <Link href="/about">
-                  <Button className="primary-btn px-6 py-3 rounded-xl" data-testid="learn-more-about">
+                  <Button className="primary-btn px-8 py-3 rounded-xl" data-testid="learn-more-about">
                     Learn More About Us
                   </Button>
                 </Link>
               </div>
             </div>
             
-            <div className="relative">
+            <div className="relative order-1 lg:order-2">
               <img 
                 src="https://images.unsplash.com/photo-1573497701240-345a300b8d36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600" 
                 alt="African American professionals collaborating at table discussing business" 
-                className="rounded-2xl shadow-xl w-full h-auto" 
+                className="rounded-2xl shadow-2xl w-full h-auto object-cover" 
               />
             </div>
           </div>
 
-          <Values />
+          <div className="mt-20">
+            <Values />
+          </div>
         </div>
       </section>
 
